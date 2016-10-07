@@ -322,7 +322,7 @@ h2 {
     margin: 0;
 }
 .list-container {
-    margin: 50px 0 0 0;
+    margin: 50px 0 50px 0;
     background: #fff;
 }
 .list-container--items {
