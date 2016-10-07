@@ -170,6 +170,37 @@ Template.hello.events({
 });
 
 
+Template.hello.events({
+  'click #sign_up'(event, instance) {
+    if(true){
+      var uname = $("#uname").val();
+      var email = $("#email_id").val();
+      var password = $("#password").val();
+      var domain_name = $("#domain_name").val();
+      var password_confirmation = $("#password_confirmation").val();
+      Session.set('query',true);
+      var data ={"email": email,"password": password, "domain_name": domain_name, "name": uname, "password_confirmation": password_confirmation}
+      // localStorage.setItem("current_user",{'user_name':"test1",'domain_name':"test123",'auth_token':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNCwiZXhwIjoxNDc1Njc4NzAzfQ.hkrbYpOSAauF1klSYwGomH8Y2JCHgy2oDtNriU2YcLo'})
+      Meteor.call("signup", data, function(error, results) {
+        //results.data should be a JSON object
+        console.log("results",results);
+          if(results){
+            cuser = JSON.stringify({'user_name':uname,'domain_name':domain_name,'email':email,'auth_token':results.data['auth_token']})
+            // localStorage.setItem("current_user",cuser);
+            alert("you are Successfully sign up, Now you can login");
+            $(".user-login-overly").removeClass("active")
+            // Session.set("is_login",true);
+          }
+          if(error){
+            alert("Something went wrong")
+          }
+      });
+    }
+  },
+});
+
+
+
 
 
 Template.hello.events({
