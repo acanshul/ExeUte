@@ -158,6 +158,11 @@ Template.hello.events({
           if(results){
             cuser = JSON.stringify({'user_name':uname,'domain_name':domain_name,'email':email,'auth_token':results.data['auth_token']})
             localStorage.setItem("current_user",cuser);
+            $("#uname").val('');
+            $("#email_id").val('');
+            $("#password").val('');
+            $("#domain_name").val('');
+            $("#password_confirmation").val('');
             $(".user-login-overly").removeClass("active")
             Session.set("is_login",true);
           }
@@ -186,6 +191,11 @@ Template.hello.events({
         console.log("results",results);
           if(results){
             cuser = JSON.stringify({'user_name':uname,'domain_name':domain_name,'email':email,'auth_token':results.data['auth_token']})
+            $("#uname").val('');
+            $("#email_id").val('');
+            $("#password").val('');
+            $("#domain_name").val('');
+            $("#password_confirmation").val('');
             // localStorage.setItem("current_user",cuser);
             alert("you are Successfully sign up, Now you can login");
             $(".user-login-overly").removeClass("active")
