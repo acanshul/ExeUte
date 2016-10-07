@@ -123,7 +123,8 @@ footer:hover .svg-love {
     width: 20px;
     height: 20px;
 }
-.tooltip {
+.tooltip, 
+.logout-tooltip {
     position: absolute;
     background: #49505b;
     color: #fff;
@@ -133,15 +134,22 @@ footer:hover .svg-love {
     white-space: nowrap;
     right: 30px;
     top: -4px;
+    z-index: 1;
 }
-.top-right:hover .tooltip {
+.top-right:hover .tooltip, 
+.logout-container:hover .logout-tooltip{
     visibility: visible;
 } 
-.top-right {
+.top-right, 
+.logout-container{
     float: right;
     position: relative;
 }
-.tooltip:before{
+.logout-container {
+    margin-right: 20px;
+} 
+.tooltip:before,
+.logout-tooltip:before{
     content: '';
     display: block;
     width: 0;

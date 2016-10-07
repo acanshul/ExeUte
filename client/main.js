@@ -69,7 +69,13 @@ Template.hello.helpers({
     }else{
       return false;
     }
-  }
+  },
+  get_readonly: function() {
+    if(this.state === 'complete'){
+      return "readonly"
+    }
+    // body...
+  },
 
 });
 
