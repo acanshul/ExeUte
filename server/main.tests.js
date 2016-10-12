@@ -21,8 +21,6 @@ if (Meteor.isServer) {
         // }
 
         Meteor.call('signin', {"email": "ac@happytodo.test","password": "temp123", "domain_name": "test123"},function(err,res){
-          console.log("err",err);
-          console.log("res",res);
           token = res.data['auth_token']
         });
 
